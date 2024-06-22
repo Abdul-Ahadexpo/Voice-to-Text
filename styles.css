@@ -1,0 +1,145 @@
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  animation: backgroundAnimation 15s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+  }
+  25% {
+    background: linear-gradient(to right, #ff8c94, #ffabc1);
+  }
+  50% {
+    background: linear-gradient(to right, #ff9ea8, #ffc0d0);
+  }
+  75% {
+    background: linear-gradient(to right, #ffb199, #ffdfeb);
+  }
+  100% {
+    background: linear-gradient(to right, #ffb199, #ff7eb3);
+  }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  animation: slideIn 1s ease-out;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #ff6c6c;
+  margin-bottom: 20px;
+  animation: bounceIn 1.5s;
+}
+
+select {
+  font-size: 18px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #ff9696;
+  border-radius: 10px;
+  transition: border-color 0.3s;
+}
+
+button {
+  font-size: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding: 15px 40px;
+  margin: 10px;
+  color: #ffffff;
+  background: #ff8a8a;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: #ff6565;
+  transform: scale(1.1);
+}
+
+button:disabled {
+  background: #c6c0c0;
+  cursor: not-allowed;
+}
+
+#output-text-box {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: #2f3542;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ff8f8f;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.listening #output-text-box {
+  border-color: #ff8b8b;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  box-shadow: 0 0 15px #ff5d6a;
+}
+
+h4 {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #ffffff;
+  animation: fadeIn 2s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
