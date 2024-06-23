@@ -3,6 +3,7 @@ const stopBtn = document.getElementById("stop-btn");
 const outputTextBox = document.getElementById("output-text-box");
 const container = document.querySelector(".container");
 const languageSelect = document.getElementById("language-select");
+
 let recognition = new (window.SpeechRecognition ||
   window.webkitSpeechRecognition)();
 recognition.lang = "en-US";
