@@ -1,30 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voice to Text</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Voice to Text</h1>
-      <select id="language-select">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice to Text</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/5fc4420cfa.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Keyframe Animations */
+    @keyframes neon-glow {
+
+      0%,
+      100% {
+        text-shadow: 0 0 5px #6ee7b7, 0 0 10px #3b82f6, 0 0 20px #6366f1;
+      }
+
+      50% {
+        text-shadow: 0 0 10px #d946ef, 0 0 20px #9333ea, 0 0 30px #6ee7b7;
+      }
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Custom Glassmorphism Effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Applying Glow Animation */
+    .neon-text {
+      animation: neon-glow 2s infinite alternate;
+    }
+
+    /* Fade In */
+    .animate-slide-up {
+      animation: slide-up 0.8s ease-out;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 text-white min-h-screen flex flex-col items-center justify-center font-sans">
+  <!-- Main Container -->
+  <div class="glass shadow-lg rounded-lg p-6 w-full max-w-md animate-slide-up">
+    <h1 class="text-3xl font-extrabold text-center mb-6 neon-text">Voice to Text 🎙️</h1>
+
+    <!-- Language Selector -->
+    <div class="form-control mb-6">
+      <label class="label">
+        <span class="label-text text-gray-300">Select Language</span>
+      </label>
+      <select id="language-select" class="select select-primary w-full">
         <option value="en-US">English US</option>
-        <option value="en-US">English UK</option>
+        <option value="en-UK">English UK</option>
         <option value="bn-BD">Bengali</option>
         <option value="hi-IN">Hindi</option>
         <option value="ja-JP">Japanese</option>
         <option value="ar-SA">Arabic</option>
         <option value="ko-KR">Korean</option>
         <option value="ur-PK">Urdu</option>
-        <!-- Add more languages as needed -->
       </select>
-      <input type="text" id="output-text-box" readonly />
-      <button id="start-btn">Start</button>
-      <button id="stop-btn" disabled>Stop</button>
     </div>
-    <h4>Made by Abdul Ahad....</h4>
-    <script src="script.js"></script>
-  </body>
+
+    <!-- Output Box -->
+    <div class="form-control mb-6">
+      <label class="label">
+        <span class="label-text text-gray-300">Output Text</span>
+      </label>
+      <div class="relative">
+        <input id="output-text-box" type="text" class="input input-accent w-full bg-gray-800 text-white"
+          placeholder="Your text will appear here..." readonly />
+        <button id="copy-btn"
+          class="absolute right-3 top-1/2 -translate-y-1/2 text-accent hover:scale-105 transition-transform">
+          <i class="fa-solid fa-copy fa-2xl"></i>
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="flex gap-4 justify-center">
+      <button id="start-btn" class="btn btn-success hover:scale-105 transition-transform duration-300">Start</button>
+      <button id="stop-btn" class="btn btn-error hover:scale-105 transition-transform duration-300"
+        disabled>Stop</button>
+    </div>
+
+
+  </div>
+
+  <!-- Footer -->
+  <p class="mt-6 text-sm text-gray-400 text-center animate-slide-up">
+    Made by <span class="text-accent font-bold cursor-pointer neon-text">~Nazim~</span> 💻
+  </p>
+  <script src="script.js"></script>
+</body>
+
 </html>
